@@ -6,7 +6,7 @@ import { Feather } from '@expo/vector-icons';
 import colors from 'tailwindcss/colors';
 import { api } from '../lib/axios';
 
-const availableWeekDays = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sabado'];
+const availableWeekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 export function New () {
   const [weekDays, setWeekDays] = useState<number[]>([]);
@@ -23,17 +23,17 @@ export function New () {
   async function handleCreateNewHabit() {
     try {
       if(!title.trim() || weekDays.length === 0) {
-        return Alert.alert('Novo Hábito', 'Informe o nome do hábito e escolha a periodicidade');
+        return Alert.alert('New habit', 'Enter the name of the habit and choose the frequency');
       }
 
       await api.post('/habits', {title, weekDays});
       setTitle('');
       setWeekDays([]);
 
-      Alert.alert('Novo Hábito', 'Hábito criado com sucesso');
+      Alert.alert('New habit', 'Habit created successfully');
     } catch (error) {
       console.log(error);
-      Alert.alert('Ops', 'Não foi possível criar um novo hábito, tente mais novamente mais tarde!');
+      Alert.alert('Ops', 'Problem on create a new habit, try again later!');
     }
   }
 
@@ -46,23 +46,23 @@ export function New () {
         <BackButton />
 
         <Text className='mt-6 text-white font-extrabold text-3xl'>
-          Criar hábito
+          Add new habit
         </Text>
 
         <Text className='mt-6 text-white font-semibold text-base'>
-          Qual o seu compromentimento?
+          What is your commitment?
         </Text>
 
         <TextInput
           className='h-12 pl-4 rounded-lg mt-3 bg-zinc-900 text-white border-2 border-zinc-800 focus:border-green-600'
-          placeholder='Exercícios, dormir bem, etc...'
+          placeholder='Practice english, sleep more, etc...'
           placeholderTextColor={colors.zinc[400]}
           onChangeText={setTitle}
           value={title}
         />
 
         <Text className='mt-6 mb-3 text-white font-semibold text-base'>
-          Qual a recorrência?
+          What is the recurrence?
         </Text>
 
         {availableWeekDays.map((weekDay, index) => (
@@ -81,7 +81,7 @@ export function New () {
         >
           <Feather name='check' size={20} color={colors.white} />
           <Text className='font-semibold text-base text-white ml-2'>
-            Confirmar
+            Confirm
           </Text>
         </TouchableOpacity>
       </ScrollView>

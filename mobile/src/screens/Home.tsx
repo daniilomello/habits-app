@@ -8,7 +8,7 @@ import { HabitDay, DAY_SIZE } from '../components/HabitDay';
 import { generateDatesFromYearBeginning } from '../utils/generate-dates-from-year-beginning';
 import dayjs from 'dayjs';
 
-const weekDays = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S' ];
+const weekDays = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 const datesFromYearStart = generateDatesFromYearBeginning();
 const minimumSummaryDatesSizes = 18 * 5;
 const amountOfDaysToFill = minimumSummaryDatesSizes - datesFromYearStart.length;

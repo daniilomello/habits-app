@@ -5,7 +5,7 @@ import {
   Inter_400Regular,
   Inter_600SemiBold,
   Inter_700Bold,
-  Inter_800ExtraBold
+  Inter_800ExtraBold,
 } from '@expo-google-fonts/inter';
 import { Loading } from './src/components/Loading';
 import { Routes } from './src/routes';
@@ -15,7 +15,7 @@ export default function App() {
     Inter_400Regular,
     Inter_600SemiBold,
     Inter_700Bold,
-    Inter_800ExtraBold
+    Inter_800ExtraBold,
   });
 
   if (!fontsLoaded) return <Loading />;
@@ -23,7 +23,11 @@ export default function App() {
   return (
     <>
       <Routes />
-      <StatusBar barStyle='light-content' backgroundColor='transparent' translucent />
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor="transparent"
+        translucent
+      />
     </>
   );
 }

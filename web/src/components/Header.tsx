@@ -14,7 +14,7 @@ export function Header() {
           className="border border-violet-500 font-semibold rounded-lg px-6 py-4 flex items-center gap-3 hover:border-violet-300 focus:outline-none focus:ring-2 focus:ring-violet-800 focus:ring-offset-2 focus:ring-offset-background transition-colors"
         >
           <Plus size={20} className="text-violet-500" />
-          Novo Hábito
+          New Habit
         </Dialog.Trigger>
 
         <Dialog.Portal>
@@ -24,7 +24,7 @@ export function Header() {
               <X size={24} aria-label='Close' />
             </Dialog.Close>
             <Dialog.Title className="text-3xl leading-tight font-extrabold">
-              Criar Hábito
+              Add new Habit
             </Dialog.Title>
             <NewHabitForm />
           </Dialog.Content>

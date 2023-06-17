@@ -4,7 +4,7 @@ import { HabitDay } from './HabitDay';
 import { api } from '../lib/axios';
 import dayjs from 'dayjs';
 
-const weekDays = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'];
+const weekDays = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 const summaryDates = generateDatesFromYearBeginning();
 const minimumSummaryDateSize = 18 * 7;
 const amountOfDaysTofill = minimumSummaryDateSize - summaryDates.length;

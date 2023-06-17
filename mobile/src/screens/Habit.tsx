@@ -49,7 +49,7 @@ export function Habit() {
 
     } catch (error) {
       console.log(error);
-      Alert.alert('Ops', 'Não foi possível carregar as informações do hábito');
+      Alert.alert('Ops', 'Could not load habit information');
     } finally {
       setLoading(false);
     }
@@ -66,7 +66,7 @@ export function Habit() {
       }
     } catch (error) {
       console.log(error);
-      Alert.alert('Ops', 'Não possível atualizar o status do Hábito');
+      Alert.alert('Ops', 'Unable to update Habit status');
     }
   }
 
@@ -112,7 +112,7 @@ export function Habit() {
 
         {isDateInPast && (
           <Text className='text-white mt-10 text-center'>
-            Você não pode editar um hábito de uma data passada.
+            You cannot edit a habit from a past date.
           </Text>
         )}
       </ScrollView>
